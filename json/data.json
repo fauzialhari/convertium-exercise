@@ -1,0 +1,9 @@
+{
+  "FirstSlide": {
+    "BgUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "Content": {
+      "title": "Lorem Ipsum Dolor",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+    }
+  }
+}
