@@ -13,16 +13,24 @@ export default async function Home() {
   return (
     <>
       <section className="section">
-        <div className="h-screen relative before:content-['*'] before:absolute before:w-full before:h-full before:bg-white before:opacity-25">
+        <div className="h-screen relative before:content-['*'] before:absolute before:w-full before:h-full before:bg-slate-400 before:opacity-25">
           <video data-autoplay loop muted className="h-full object-cover">
             <source
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               type="video/mp4"
             />
           </video>
-          <article className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center prose">
-            <h1>This is Title</h1>
-            <p>
+          <article className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center prose text-white max-w-[75%]">
+            <h1
+              className="text-9xl text-white mb-0"
+              style={{ textShadow: "0 0.3rem 0.9rem rgba(0,0,0,.4)" }}
+            >
+              This is Title
+            </h1>
+            <p
+              className="text-2xl"
+              style={{ textShadow: "-1px 1px 8px rgba(0,0,0,.8)" }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
               culpa veniam molestiae corrupti accusantium excepturi, voluptate
               quos. Similique eius, nihil deleniti qui quisquam doloribus
