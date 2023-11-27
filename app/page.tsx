@@ -1,15 +1,37 @@
-import fsPromises from "fs/promises";
-import path from "path";
+"use client";
+import { useEffect, useState } from "react";
 import FullPageSections from "./FullPageSections";
 import { Data } from "..";
-
-const dataFilePath = path.join(process.cwd(), "json/data.json");
 async function getData(): Promise<Data> {
-  const fileBuffer = await fsPromises.readFile(dataFilePath);
-  const objectData = JSON.parse(fileBuffer.toString());
-  return objectData;
+  const response = await fetch(`http://localhost:3000/api/`);
+  return response.json();
 }
-export default async function Home() {
-  const data = await getData();
+
+export default function Home() {
+  const [data, setData] = useState<Data>({
+    firstSlide: {
+      bgUrl: "",
+      text: "",
+      title: "",
+    },
+    secondSlide: {
+      bgUrl: {
+        default: "",
+        alt: ""
+      },
+      title: "",
+      carouselData: []
+    }
+  });
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getData() {
+      const response = await fetch(`http://localhost:3000/api/`);
+      const data = await response.json();      
+      setData(data);
+    }
+    getData();
+  }, []);
   return <FullPageSections data={data} />;
 }
