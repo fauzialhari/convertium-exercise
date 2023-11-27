@@ -1,6 +1,7 @@
 "use client";
 import Slider from "react-slick";
-export default function Carousel() {
+import { CarouselData } from "..";
+export default function Carousel({ data }: { data: CarouselData[] }) {
   const settings = {
     dots: false,
     infinite: false,
@@ -45,81 +46,18 @@ export default function Carousel() {
   };
   return (
     <Slider {...settings}>
-      <div className="pr-3">
-        <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
-          <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
-            <div className="content text-lg">
-              <h3 className="mt-0">Lorem Ipsum #1</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                suscipit, pariatur ullam cumque eum quam iusto dolorem
-                doloremque similique! Eum sint reprehenderit illo. Asperiores,
-                pariatur cumque? Vero quidem eveniet assumenda.
-              </p>
+      {data.map((item) => (
+        <div className="pr-3" key={item.id}>
+          <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
+            <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
+              <div className="content text-lg">
+                <h3 className="mt-0">{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="pr-3">
-        <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
-          <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
-            <div className="content text-lg">
-              <h3 className="mt-0">Lorem Ipsum #2</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                suscipit, pariatur ullam cumque eum quam iusto dolorem
-                doloremque similique! Eum sint reprehenderit illo. Asperiores,
-                pariatur cumque? Vero quidem eveniet assumenda.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="pr-3">
-        <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
-          <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
-            <div className="content text-lg">
-              <h3 className="mt-0">Lorem Ipsum #3</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                suscipit, pariatur ullam cumque eum quam iusto dolorem
-                doloremque similique! Eum sint reprehenderit illo. Asperiores,
-                pariatur cumque? Vero quidem eveniet assumenda.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="pr-3">
-        <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
-          <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
-            <div className="content text-lg">
-              <h3 className="mt-0">Lorem Ipsum #4</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                suscipit, pariatur ullam cumque eum quam iusto dolorem
-                doloremque similique! Eum sint reprehenderit illo. Asperiores,
-                pariatur cumque? Vero quidem eveniet assumenda.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="pr-3">
-        <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
-          <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
-            <div className="content text-lg">
-              <h3 className="mt-0">Lorem Ipsum #5</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
-                suscipit, pariatur ullam cumque eum quam iusto dolorem
-                doloremque similique! Eum sint reprehenderit illo. Asperiores,
-                pariatur cumque? Vero quidem eveniet assumenda..
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </Slider>
   );
 }

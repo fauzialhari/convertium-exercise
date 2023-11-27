@@ -1,9 +1,37 @@
 {
-  "FirstSlide": {
-    "BgUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
-    "Content": {
-      "title": "Lorem Ipsum Dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
-    }
+  "firstSlide": {
+    "bgUrl": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "title": "Lorem Ipsum Dolor",
+    "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+  },
+  "secondSlide": {
+    "title": "Title for Carousel",
+    "carouselData": [
+      {
+        "id": "carousel#1",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+      },
+      {
+        "id": "carousel#2",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+      },
+      {
+        "id": "carousel#3",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+      },
+      {
+        "id": "carousel#4",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+      },
+      {
+        "id": "carousel#5",
+        "title": "Lorem Ipsum Dolor",
+        "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
+      }
+    ]
   }
 }
