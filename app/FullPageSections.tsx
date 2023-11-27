@@ -45,7 +45,7 @@ export default function FullPageSections({ data }: { data: Data }) {
       </section>
       <div className="section">
         <div className={`h-screen w-screen relative overflow-hidden animate__animated ${currentSlide===1 ? "animate__fadeIn" : "animate__fadeOut"}`}>
-          <picture className={`max-h-full block h-full w-full transition-transform duration-[3500ms] ${currentSlide===1 ? "scale-125" : "scale-50"}`}>
+          <picture className={`max-h-full block h-full w-full transition-transform duration-[3500ms] ${currentSlide===1 ? "portrait:origin-top scale-125" : "scale-50"}`}>
             <source
               media="(min-width:1280px)"
               srcSet="assets/img-1920x1200.jpg"
@@ -58,7 +58,7 @@ export default function FullPageSections({ data }: { data: Data }) {
               media="(min-width:768px)"
               srcSet="assets/img-1280x800.jpg"
             />
-            <img src="assets/img-800x368.jpg" alt="Earth" className="h-full w-full object-contain"/>
+            <img src="assets/img-800x368.jpg" alt="Earth" className="h-full w-full portrait:h-auto object-contain"/>
           </picture>
           <div className=" w-full absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 right-0">
             <div className="container mx-auto">
