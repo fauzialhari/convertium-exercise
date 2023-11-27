@@ -6,6 +6,24 @@
   },
   "secondSlide": {
     "title": "Title for Carousel",
+    "bgUrl": {
+      "default": "assets/img-800x368.jpg",
+      "alt": "Image of Earth",
+      "srcSet": [
+        {
+          "media": "(min-width:1280px)",
+          "url": "assets/img-1920x1200.jpg"
+        },
+        {
+          "media": "(orientation:portrait)",
+          "url": "assets/img-800x368.jpg"
+        },
+        {
+          "media": "(min-width:768px)",
+          "url": "assets/img-1280x800.jpg"
+        }
+      ]
+    },
     "carouselData": [
       {
         "id": "carousel#1",

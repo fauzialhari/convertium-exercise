@@ -13,9 +13,18 @@ interface FirstSlide extends Content {
     bgUrl: string;
 }
 
+interface bgUrl {
+    default: string;
+    alt: string;
+    srcSet: {
+        media: string;
+        url: string
+    }[]
+}
+
 interface SecondSlide {
     title: string;
-    bgUrl: string;
+    bgUrl: bgUrl;
     carouselData: CarouselData[]
 }
 
