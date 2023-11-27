@@ -9,27 +9,27 @@
     "carouselData": [
       {
         "id": "carousel#1",
-        "title": "Lorem Ipsum Dolor",
+        "title": "Lorem Ipsum Dolor #1",
         "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
       },
       {
         "id": "carousel#2",
-        "title": "Lorem Ipsum Dolor",
+        "title": "Lorem Ipsum Dolor #2",
         "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
       },
       {
         "id": "carousel#3",
-        "title": "Lorem Ipsum Dolor",
+        "title": "Lorem Ipsum Dolor #3",
         "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
       },
       {
         "id": "carousel#4",
-        "title": "Lorem Ipsum Dolor",
+        "title": "Lorem Ipsum Dolor #4",
         "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
       },
       {
         "id": "carousel#5",
-        "title": "Lorem Ipsum Dolor",
+        "title": "Lorem Ipsum Dolor #5",
         "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."
       }
     ]

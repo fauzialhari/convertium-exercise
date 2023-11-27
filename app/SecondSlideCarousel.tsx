@@ -7,6 +7,20 @@ export default function Carousel({ data }: { data: CarouselData[] }) {
     infinite: false,
     slidesToShow: 2.5,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ],
     nextArrow: (
       <span>
         <svg
@@ -47,7 +61,7 @@ export default function Carousel({ data }: { data: CarouselData[] }) {
   return (
     <Slider {...settings}>
       {data.map((item) => (
-        <div className="pr-3" key={item.id}>
+        <div className="lg:pr-3 pr-2" key={item.id}>
           <div className="pb-[100%] rounded-tl-3xl rounded-br-3xl relative bg-white/80">
             <div className="prose absolute top-0 left-0 right-0 bottom-0 w-full h-full p-6 overflow-y-auto">
               <div className="content text-lg">

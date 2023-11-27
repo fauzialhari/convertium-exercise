@@ -1,17 +1,18 @@
 "use client";
 import ReactFullpage from "@fullpage/react-fullpage";
 import { useState } from "react";
+import { FullPageContextProvider } from "./FullPageContext";
 export default function MainTemplate({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [slide, setSlide] = useState(0);
+  const [slide, setSlide] = useState(-1);
   return (
     <>
       <header className="fixed z-10 w-full mt-5">
         <nav className="container mx-auto flex justify-between items-center">
-          <div className="w-1/5">
+          <div className="lg:w-1/5 w-2/5 landscape:w-1/5">
             <a href="/">
               <svg
                 id="logo-3"
@@ -71,18 +72,25 @@ export default function MainTemplate({
       <ReactFullpage
         navigation
         credits={{
-          enabled: true,
+          enabled: false,
           label: "Made with fullpage.js",
           position: "right",
         }}
+        scrollingSpeed={1250}
         controlArrows={true}
-        afterLoad={(_origin, destination) => setSlide(destination.index)}
+        onLeave={()=>{
+          setSlide(-2)
+        }}
+        afterLoad={(_origin, destination) => {
+          setSlide(destination.index)}}
         render={({ fullpageApi }) => (
           <ReactFullpage.Wrapper>
-            {children}
-            {slide === 1 || (
+            <FullPageContextProvider loadedSlide={slide}>
+              {children}
+            </FullPageContextProvider>
+            {slide === 0 && (
               <button
-                className="absolute top-auto bottom-0 left-1/2 -translate-x-1/2 pb-5"
+                className="absolute top-auto bottom-0 left-1/2 -translate-x-1/2 pb-5 animate__animated animate__flash animate__infinite animate__delay-2s animate__slower hover:animate-none"
                 onClick={() => fullpageApi.moveSectionDown()}
               >
                 <svg
@@ -91,7 +99,7 @@ export default function MainTemplate({
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  className="w-16 h-16 text-white"
+                  className="xl:w-16 xl:h-16 w-10 h-10 text-white"
                 >
                   <path
                     stroke-linecap="round"

@@ -26,22 +26,37 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.slick-arrow.slick-next, .slick-arrow.slick-prev {
-  @apply w-16 h-16;
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+  @apply xl:w-16 xl:h-16 md:top-1/2 md:-translate-y-1/2 top-full transform-none w-10 h-10 px-1;
 }
 
 .slick-arrow.slick-next {
-  @apply -right-16;
+  @apply xl:-right-16 md:-right-10 md:left-auto right-auto left-1/2;
 }
 
 .slick-arrow.slick-prev {
-  @apply -left-16;
+  @apply xl:-left-16 md:-left-10 md:right-auto left-auto right-1/2;
 }
 
-.slick-next:before, .slick-prev:before {
+#fp-nav.fp-right ul li a span,
+.fp-slidesNav ul li a span {
+  @apply bg-white;
+}
+
+.slick-next:before,
+.slick-prev:before {
   display: none;
 }
 
 .slick-disabled {
   opacity: 0.5;
+}
+
+a {
+  @apply hover:animate-pulse;
+}
+
+picture.animate__animated.animate__slower {
+  animation-duration: calc(var(--animate-duration) * 6)
 }
