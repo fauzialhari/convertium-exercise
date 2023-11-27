@@ -18,8 +18,11 @@ export default function FullPageSections({ data }: { data: Data }) {
             loop
             muted
             className="h-full w-full object-cover"
+            poster="https://peach.blender.org/wp-content/uploads/bbb-splash.thumbnail.png"
           >
-            <source src={data.firstSlide.bgUrl} type="video/mp4" />
+            {data.firstSlide.bgUrl && (
+              <source src={data.firstSlide.bgUrl} type="video/mp4" />
+            )}
           </video>
           <article className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center prose text-white lg:max-w-[75%] max-w-none">
             <h1
@@ -59,12 +62,8 @@ export default function FullPageSections({ data }: { data: Data }) {
               currentSlide === 1 ? "portrait:origin-top scale-125" : "scale-50"
             }`}
           >
-            {data.secondSlide.bgUrl.srcSet.map((src) => (
-              <source
-              key={src.media}
-                media={src.media}
-                srcSet={src.url}
-              />
+            {data.secondSlide.bgUrl.srcSet?.map((src) => (
+              <source key={src.media} media={src.media} srcSet={src.url} />
             ))}
             <img
               src={data.secondSlide.bgUrl.default}

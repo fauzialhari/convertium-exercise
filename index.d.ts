@@ -10,13 +10,13 @@ interface CarouselData extends Content {
 }
 
 interface FirstSlide extends Content {
-    bgUrl: string;
+    bgUrl?: string;
 }
 
 interface bgUrl {
     default: string;
-    alt: string;
-    srcSet: {
+    alt?: string;
+    srcSet?: {
         media: string;
         url: string
     }[]
